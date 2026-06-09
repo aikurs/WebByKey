@@ -1,18 +1,13 @@
 const projects = [
-    { title: "Sklep eCommerce", desc: "Kompleksowy sklep na WooCommerce z szybką płatnością." },
-    { title: "Strona Wizytówka", desc: "Responsywna strona dla lokalnego biznesu." },
-    { title: "Optymalizacja", desc: "Przyspieszenie strony o 50% i poprawa SEO." },
-    { title: "Dashboard", desc: "Autorski panel do zarządzania treścią." }
+    { title: "Ultra Shop", desc: "Szybki sklep zintegrowany z systemem płatności." },
+    { title: "Landing Page", desc: "Konwersyjna strona typu One-Page dla startupu." },
+    { title: "Custom UI", desc: "Nowoczesny interfejs stworzony od zera w CSS." }
 ];
 
-function loadProjects() {
-    const projectList = document.getElementById('projectList');
-    projectList.innerHTML = projects.map(p => `
-        <div class="card">
-            <h3>${p.title}</h3>
-            <p>${p.desc}</p>
-        </div>
-    `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', loadProjects);
+const list = document.getElementById('projectList');
+list.innerHTML = projects.map(p => `
+    <div class="card">
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+    </div>
+`).join('');
