@@ -3,42 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Studio | Profesjonalne Strony WWW</title>
-    <style>
-        :root { --primary-color: #2563eb; --bg-color: #f8fafc; --text-color: #1e293b; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
-        .container { max-width: 600px; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        h1 { color: var(--primary-color); margin-top: 0; }
-        .hero { margin-bottom: 30px; }
-        .offer-list { background: #f1f5f9; padding: 20px 40px; border-radius: 12px; }
-        .contact-box { background: var(--primary-color); color: white; padding: 25px; border-radius: 12px; margin-top: 30px; }
-        .phone { font-size: 1.5rem; font-weight: bold; margin: 10px 0; }
-        .hours { font-size: 0.9rem; opacity: 0.9; }
-    </style>
+    <title>Web Dev Studio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header class="hero">
-            <h1>Web Development Studio</h1>
-            <p>Tworzę nowoczesne strony WWW i sklepy eCommerce. Szybko, profesjonalnie i z indywidualnym podejściem do każdego projektu.</p>
+        <header>
+            <h1>Web Dev Studio</h1>
+            <p>Profesjonalne strony i sklepy eCommerce.</p>
         </header>
 
-        <section class="offer-list">
-            <h3>Moja oferta:</h3>
-            <ul>
-                <li>Projektowanie stron wizytówek</li>
-                <li>Konfiguracja sklepów internetowych</li>
-                <li>Optymalizacja wydajności stron</li>
-                <li>Naprawa i aktualizacje stron</li>
-            </ul>
-        </section>
+        <section id="projectList" class="grid">
+            </section>
 
-        <div class="contact-box">
+        <footer class="contact">
             <h3>Kontakt</h3>
-            <p>Masz projekt do zrealizowania? Napisz lub zadzwoń:</p>
             <div class="phone">📞 +48 792 748 410</div>
-            <p class="hours">🕒 Dostępność: Pn-Śr: 15:00+ | Czw-Pt: 16:00+</p>
-        </div>
+        </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
