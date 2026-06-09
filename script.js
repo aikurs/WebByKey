@@ -1,21 +1,18 @@
-const projects = [];
+const projects = [
+    { title: "Sklep eCommerce", desc: "Kompleksowy sklep na WooCommerce z szybką płatnością." },
+    { title: "Strona Wizytówka", desc: "Responsywna strona dla lokalnego biznesu." },
+    { title: "Optymalizacja", desc: "Przyspieszenie strony o 50% i poprawa SEO." },
+    { title: "Dashboard", desc: "Autorski panel do zarządzania treścią." }
+];
 
-function addProject() {
-    const title = document.getElementById('title').value;
-    const desc = document.getElementById('desc').value;
-    
-    if(title && desc) {
-        projects.push({ title, desc });
-        renderProjects();
-    }
-}
-
-function renderProjects() {
-    const list = document.getElementById('projectList');
-    list.innerHTML = projects.map(p => `
+function loadProjects() {
+    const projectList = document.getElementById('projectList');
+    projectList.innerHTML = projects.map(p => `
         <div class="card">
             <h3>${p.title}</h3>
             <p>${p.desc}</p>
         </div>
     `).join('');
 }
+
+document.addEventListener('DOMContentLoaded', loadProjects);
