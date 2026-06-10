@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head><link rel="stylesheet" href="style.css"></head>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Panel Admina - Zabezpieczony</title>
+    <script>
+        // Tutaj ustaw swoje hasło
+        const HASLO = "MojTajnyKod123"; 
+        
+        function sprawdzHaslo() {
+            const haslo = prompt("Podaj hasło administratora:");
+            if (haslo !== HASLO) {
+                alert("Błędne hasło! Powrót do strony głównej.");
+                window.location.href = "index.html";
+            }
+        }
+        // Sprawdź przy starcie
+        sprawdzHaslo();
+    </script>
+</head>
 <body>
     <div class="container">
-        <h1>Panel Administratora</h1>
-        <input type="text" id="title" placeholder="Nazwa projektu">
-        <textarea id="desc" placeholder="Opis projektu"></textarea>
-        <button onclick="addProject()">Dodaj Projekt</button>
-        
-        <div id="projectList"></div>
+        <h1>Dodaj nowy projekt</h1>
+        <div class="admin-form">
+            <input type="text" id="pTitle" placeholder="Tytuł projektu">
+            <input type="text" id="pImg" placeholder="Link do zdjęcia (URL)">
+            <textarea id="pDesc" rows="5" placeholder="Pełny opis projektu..."></textarea>
+            <button onclick="saveProject()">Zapisz projekt</button>
+        </div>
+        <br>
+        <a href="index.html" style="color: var(--primary);">← Powrót do portfolio</a>
     </div>
     <script src="script.js"></script>
 </body>

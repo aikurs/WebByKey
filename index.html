@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Dev Studio | Next Level</title>
+    <title>Web Dev Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glass-container">
-        <header>
-            <h1>Web Dev Studio</h1>
-            <p>Buduję cyfrową przyszłość Twojego biznesu.</p>
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1>Moje Realizacje</h1>
         </header>
 
-        <section class="grid" id="projectList"></section>
-
-        <footer class="contact-card">
-            <h3>Gotowy na współpracę?</h3>
-            <p>Zadzwoń teraz i omówmy szczegóły Twojego projektu:</p>
-            <div class="phone">792 748 410</div>
-        </footer>
+        <div class="grid" id="projectList"></div>
     </div>
+
+    <div id="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" style="width:100%; border-radius:15px; margin-bottom:20px;">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
