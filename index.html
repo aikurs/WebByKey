@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Dev Portfolio</title>
+    <title>Web Dev Studio | Profesjonalne Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header style="text-align: center; margin-bottom: 50px;">
-            <h1>Moje Realizacje</h1>
+        <header class="header">
+            <h1>Web Dev Studio</h1>
+            <p>Buduję cyfrową przyszłość Twojego biznesu.</p>
         </header>
 
-        <div class="grid" id="projectList"></div>
+        <main id="projectList" class="grid"></main>
+
+        <footer class="contact-card">
+            <h3>Masz projekt? Porozmawiajmy!</h3>
+            <div class="phone">792 748 410</div>
+            <p>Pn-Pt: 15:00 - 20:00</p>
+        </footer>
     </div>
 
-    <div id="modal">
+    <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <img id="modalImg" src="" style="width:100%; border-radius:15px; margin-bottom:20px;">
+            <img id="modalImg" src="" alt="Projekt">
             <h2 id="modalTitle"></h2>
             <p id="modalDesc"></p>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
