@@ -1,7 +1,7 @@
 let projects = JSON.parse(localStorage.getItem('myProjects')) || [
     { 
         title: "Outletix", 
-        img: "https://images.unsplash.com/photo-1556740758-90de374c12ad", 
+        img: "https://github.com/aikurs/webdev/blob/main/images/Zrzut%20ekranu%20z%202026-06-10%2021-55-30.png?raw=true", 
         desc: "Sklep z przedmiotami outletowymi AGD z Amazon. Projekt wdrożony w 30 dni. Klient bardzo zadowolony." 
     }
 ];
