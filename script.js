@@ -1,18 +1,18 @@
-const projects = [
-    {
-        title: "Outletix",
-        img: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80&w=1000",
-        desc: "Outlet AGD z Amazon. Projekt zrealizowany w 30 dni. Klient w pełni zadowolony z wdrożenia."
+let projects = JSON.parse(localStorage.getItem('myProjects')) || [
+    { 
+        title: "Outletix", 
+        img: "https://images.unsplash.com/photo-1556740758-90de374c12ad", 
+        desc: "Sklep z przedmiotami outletowymi AGD z Amazon. Projekt wdrożony w 30 dni. Klient bardzo zadowolony." 
     }
 ];
 
 function displayProjects() {
     const list = document.getElementById('projectList');
+    if(!list) return;
     list.innerHTML = projects.map((p, i) => `
         <div class="card" onclick="openModal(${i})">
-            <img src="${p.img}" alt="${p.title}">
+            <img src="${p.img}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/400x200'">
             <h3>${p.title}</h3>
-            <p>${p.desc.substring(0, 50)}...</p>
         </div>
     `).join('');
 }
@@ -25,4 +25,17 @@ function openModal(i) {
 }
 
 function closeModal() { document.getElementById('modal').style.display = 'none'; }
-displayProjects();
+
+function saveProject() {
+    const title = document.getElementById('pTitle').value;
+    const img = document.getElementById('pImg').value;
+    const desc = document.getElementById('pDesc').value;
+    if(title && img && desc) {
+        projects.push({title, img, desc});
+        localStorage.setItem('myProjects', JSON.stringify(projects));
+        alert("Projekt dodany!");
+        window.location.href = "index.html";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', displayProjects);

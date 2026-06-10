@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Panel Admina - Zabezpieczony</title>
+    <title>Admin Panel</title>
     <script>
-        // Tutaj ustaw swoje hasło
-        const HASLO = "Koliber2305"; 
-        
+        const HASLO = "Koliber2305";
         function sprawdzHaslo() {
             const haslo = prompt("Podaj hasło administratora:");
             if (haslo !== HASLO) {
-                alert("Błędne hasło! Powrót do strony głównej.");
+                alert("Błędne hasło!");
                 window.location.href = "index.html";
             }
         }
-        // Sprawdź przy starcie
         sprawdzHaslo();
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="padding-top: 50px;">
         <h1>Dodaj nowy projekt</h1>
-        <div class="admin-form">
-            <input type="text" id="pTitle" placeholder="Tytuł projektu">
-            <input type="text" id="pImg" placeholder="Link do zdjęcia (URL)">
-            <textarea id="pDesc" rows="5" placeholder="Pełny opis projektu..."></textarea>
-            <button onclick="saveProject()">Zapisz projekt</button>
+        <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" id="pTitle" placeholder="Tytuł projektu" style="padding: 10px;">
+            <input type="text" id="pImg" placeholder="Link do zdjęcia (URL)" style="padding: 10px;">
+            <textarea id="pDesc" rows="5" placeholder="Opis projektu..." style="padding: 10px;"></textarea>
+            <button onclick="saveProject()" style="padding: 15px; cursor: pointer;">Zapisz projekt</button>
         </div>
         <br>
-        <a href="index.html" style="color: var(--primary);">← Powrót do portfolio</a>
+        <a href="index.html" style="color: #38bdf8;">← Powrót do portfolio</a>
     </div>
     <script src="script.js"></script>
 </body>
