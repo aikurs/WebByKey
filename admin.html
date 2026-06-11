@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Admin Panel</title>
-    <script>
-        const HASLO = "Koliber2305";
-        function sprawdzHaslo() {
-            const haslo = prompt("Podaj hasło administratora:");
-            if (haslo !== HASLO) {
-                alert("Błędne hasło!");
-                window.location.href = "index.html";
-            }
-        }
-        sprawdzHaslo();
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Web Dev Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const HASLO = "Koliber2305";
+      const haslo = prompt("Podaj hasło administratora:");
+      if (haslo !== HASLO) {
+        alert("Błędne hasło!");
+        window.location.href = "index.html";
+      }
+    })();
+  </script>
 </head>
 <body>
-    <div class="container" style="padding-top: 50px;">
-        <h1>Dodaj nowy projekt</h1>
-        <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
-            <input type="text" id="pTitle" placeholder="Tytuł projektu" style="padding: 10px;">
-            <input type="text" id="pImg" placeholder="Link do zdjęcia (URL)" style="padding: 10px;">
-            <textarea id="pDesc" rows="5" placeholder="Opis projektu..." style="padding: 10px;"></textarea>
-            <button onclick="saveProject()" style="padding: 15px; cursor: pointer;">Zapisz projekt</button>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Web Dev <span>Studio</span></a>
+    <a class="nav-cta" href="index.html">← Portfolio</a>
+  </nav>
+
+  <div class="container">
+    <div class="admin-wrap">
+
+      <h1>Panel administratora</h1>
+      <p class="admin-sub">Dodaj nowy projekt do portfolio publicznego.</p>
+
+      <div class="admin-form">
+        <div class="form-group">
+          <label for="pTitle">Tytuł projektu</label>
+          <input type="text" id="pTitle" placeholder="np. Sklep internetowy dla XYZ">
         </div>
-        <br>
-        <a href="index.html" style="color: #38bdf8;">← Powrót do portfolio</a>
+        <div class="form-group">
+          <label for="pCategory">Kategoria</label>
+          <input type="text" id="pCategory" placeholder="np. E-commerce, Landing page, Wizytówka...">
+        </div>
+        <div class="form-group">
+          <label for="pImg">URL zdjęcia</label>
+          <input type="url" id="pImg" placeholder="https://...">
+        </div>
+        <div class="form-group">
+          <label for="pDesc">Opis projektu</label>
+          <textarea id="pDesc" placeholder="Opisz zakres prac, technologie, efekty dla klienta..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="saveProject()">Dodaj projekt →</button>
+      </div>
+
+      <a class="back-link" href="index.html">← Powrót do portfolio</a>
+
+      <div class="preview-section">
+        <h2>Istniejące projekty</h2>
+        <div id="adminProjectList"></div>
+      </div>
+
     </div>
-    <script src="script.js"></script>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

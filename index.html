@@ -1,43 +1,92 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Dev Studio | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Dev Studio | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Web Dev Studio</h1>
-            <p>Buduję cyfrową przyszłość Twojego biznesu.</p>
-        </header>
 
-        <main id="projectList" class="grid"></main>
+  <nav>
+    <a class="nav-logo" href="index.html">Web Dev <span>Studio</span></a>
+    <a class="nav-cta" href="tel:792748410">Zadzwoń teraz</a>
+  </nav>
 
-        <footer class="contact-section">
-            <div class="contact-content">
-                <h3>Gotowy na współpracę?</h3>
-                <p>Porozmawiajmy o Twoim projekcie:</p>
-                <div class="phone-wrapper">
-                    <span class="icon">📞</span>
-                    <span class="phone">792 748 410</span>
-                </div>
-                <div class="hours">
-                    <span>🕒 Dostępność: Pn-Pt: 15:00 - 20:00</span>
-                </div>
-            </div>
-        </footer>
-    </div>
+  <div class="container">
 
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <img id="modalImg" src="" alt="Projekt">
-            <h2 id="modalTitle"></h2>
-            <p id="modalDesc"></p>
+    <section class="hero">
+      <div class="hero-eyebrow">Dostępny · Warszawa & zdalnie</div>
+      <h1>
+        Strony internetowe,<br>
+        które <span class="line-accent">sprzedają.</span>
+      </h1>
+      <p class="hero-sub">
+        Projektuję i wdrażam witryny dla małych firm i startupów — szybko, estetycznie i z myślą o konwersji.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value" id="stat-projects">0</div>
+          <div class="stat-label">Projektów</div>
         </div>
+        <div class="stat-item">
+          <div class="stat-value">3+</div>
+          <div class="stat-label">Lata doświadczenia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Zadowolonych klientów</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>Moje <span>realizacje</span></h2>
+        <span class="section-count" id="project-count">ładowanie...</span>
+      </div>
+      <main id="projectList" class="grid"></main>
+    </section>
+
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <p class="contact-eyebrow">Kontakt</p>
+      <h3>Zacznijmy razem<br>coś budować.</h3>
+      <p>Opowiedz mi o swoim projekcie — odpiszę w ciągu kilku godzin.</p>
+      <div class="phone-block">
+        <span class="phone-label">Zadzwoń lub napisz</span>
+        <a class="phone" href="tel:792748410">792 748 410</a>
+      </div>
+      <br>
+      <div class="hours">
+        🕒&nbsp; Dostępność: Pn – Pt, 15:00 – 20:00
+      </div>
+
+      <div class="footer-bar">
+        <span>© 2025 Web Dev Studio</span>
+        <a href="admin.html">Panel administratora →</a>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" onclick="handleModalClick(event)">
+    <div class="modal-content">
+      <div class="modal-img-wrap">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <img id="modalImg" src="" alt="Projekt">
+      </div>
+      <div class="modal-body">
+        <div class="modal-tag">Realizacja</div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
